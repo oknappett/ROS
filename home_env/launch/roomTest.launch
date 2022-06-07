@@ -1,0 +1,11 @@
+<launch>
+	<!-- Tell Gazebo where to find our custom object models -->
+	<env name="GAZEBO_MODEL_PATH" value="$(find home_env)/models:$(optenv GAZEBO_MODEL_PATH)" />
+	<env name="GAZEBO_RESOURCE_PATH" value="$(find home_env)" />
+
+<!-- Start Gazebo with our world model-->
+ 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="$(find home_env)/worlds/room1.world"/>
+	</include>
+
+</launch>
